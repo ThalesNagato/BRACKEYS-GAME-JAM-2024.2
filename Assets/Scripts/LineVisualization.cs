@@ -24,7 +24,7 @@ public class LineVisualization : MonoBehaviour
     {
         for (int i = 0; i < 512; i++)
         {
-            line.SetPosition(i, new Vector3 (transform.position.x +(i * 1f), AudioVisualizer._samples[i] *100, transform.position.z));
+            line.SetPosition(i, new Vector3 (transform.position.x +(i * -1f), transform.position.y + AudioVisualizer._samples[i] *-100, transform.position.z));
             
             //line.SetPosition(i, new Vector3(line.GetPosition(i).x, AudioVisualizer._audioBandBuffer[i] * 10, line.GetPosition(i).z));
             //line.colorGradient

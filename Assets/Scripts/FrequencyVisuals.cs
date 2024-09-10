@@ -26,7 +26,7 @@ public class FrequencyVisuals : MonoBehaviour
         {
             transform.localScale = new Vector2(transform.localScale.x, (AudioVisualizer._audioBand[_band] * _maxScale) + _startScale);
             Color _color = new Color(AudioVisualizer._audioBand[_band], AudioVisualizer._audioBand[_band], AudioVisualizer._audioBand[_band]);
-            _spriteRenderer.color = _color;
+           // _spriteRenderer.color = _color;
 
         }
         
