@@ -7,7 +7,7 @@ public class Conductor : MonoBehaviour
     public float songBpm;
     public float secPerBeat;
     public float songPosition;
-    public float songPositionInBeats;
+    public static float songPositionInBeats;
     public float dspSongTime;
     public AudioSource musicSource;
     public float beatsPerLoop;

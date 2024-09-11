@@ -22,6 +22,6 @@ public class SyncedRotation : MonoBehaviour
         }
 
 
-        Debug.Log(Conductor.instance.loopPositionInAnalog);
+        //Debug.Log(Conductor.instance.loopPositionInAnalog);
     }
 }
