@@ -28,4 +28,15 @@ public class UiManager : MonoBehaviour
         Application.Quit();
         Debug.Log("quit");
     }
+
+    public void PauseGame() {
+
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+
+        Time.timeScale = 1;
+    }
 }
