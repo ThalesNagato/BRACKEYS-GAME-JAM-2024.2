@@ -31,6 +31,6 @@ public class LigtningTest : MonoBehaviour
             _renderer.color = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, 0);
         }
 
-        Debug.Log(AudioVisualizer._audioBandBuffer[_band]);
+        //Debug.Log(AudioVisualizer._audioBandBuffer[_band]);
     }
 }

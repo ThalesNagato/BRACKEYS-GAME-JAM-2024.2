@@ -8,9 +8,13 @@ public class FrequencyVisuals : MonoBehaviour
     public float _startScale, _maxScale;
     public bool _useBuffer;
     SpriteRenderer _spriteRenderer;
+    public float colorBuffer = 0.5f;
+    private Color startColor;
     void Start()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        startColor = _spriteRenderer.color;
+
     }
 
     void Update()
@@ -18,15 +22,16 @@ public class FrequencyVisuals : MonoBehaviour
         if (_useBuffer)
         {
             transform.localScale = new Vector2(transform.localScale.x, (AudioVisualizer._audioBandBuffer[_band] * _maxScale) + _startScale);
-            Color _color = new Color(AudioVisualizer._audioBandBuffer[_band], AudioVisualizer._audioBandBuffer[_band], 1);
+            Color _color = new Color(startColor.r + AudioVisualizer._audioBandBuffer[_band] * colorBuffer, startColor.g + AudioVisualizer._audioBandBuffer[_band] * colorBuffer, startColor.b + AudioVisualizer._audioBandBuffer[_band] * colorBuffer);
             _spriteRenderer.color = _color;
         }
 
         if (!_useBuffer)
         {
             transform.localScale = new Vector2(transform.localScale.x, (AudioVisualizer._audioBand[_band] * _maxScale) + _startScale);
-            Color _color = new Color(AudioVisualizer._audioBand[_band], AudioVisualizer._audioBand[_band], AudioVisualizer._audioBand[_band]);
-           // _spriteRenderer.color = _color;
+            Color _color = new Color(startColor.r + AudioVisualizer._audioBand[_band] * colorBuffer, startColor.g + AudioVisualizer._audioBand[_band] *colorBuffer, startColor.b + AudioVisualizer._audioBand[_band] *colorBuffer);
+            //Debug.Log(_spriteRenderer.color.r + " / " + AudioVisualizer._audioBandBuffer[_band]);
+            _spriteRenderer.color = _color;
 
         }
         

@@ -11,6 +11,9 @@ public class AudioVisualizer : MonoBehaviour
     float[] _bandBuffer = new float[8];
     float[] _bufferDecrease = new float[8];
 
+    public float _bufferLouder = 0.005f;
+    public float _bufferQuieter = 1.2f;
+
     float[] _freqBandHighest = new float[8];
     public static float[] _audioBand = new float[8];
     public static float[] _audioBandBuffer = new float[8];
@@ -55,13 +58,13 @@ public class AudioVisualizer : MonoBehaviour
             if (_samples[k] > _bandBuffer[k])
             {
                 _bandBuffer[k] = _freqBand[k];
-                _bufferDecrease[k] = 0.005f;
+                _bufferDecrease[k] = _bufferLouder;
             }
 
             if (_freqBand[k] < _bandBuffer[k])
             {
                 _bandBuffer[k] -= _bufferDecrease[k];
-                _bufferDecrease[k] *= 1.2f;
+                _bufferDecrease[k] *= _bufferQuieter;
             }
         }
     }
