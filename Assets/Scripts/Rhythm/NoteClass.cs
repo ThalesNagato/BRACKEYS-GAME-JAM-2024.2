@@ -8,10 +8,18 @@ public class NoteClass : MonoBehaviour
     public float beatPlay;
         public Vector2 startPos;
         public Vector2 endPos;
+        
+        public float safety = 0.5f;
+        public float beatDelay = 2;
+        public float endZone;
+
+        public float interpolate;
         public GameObject noteSpawner;
         public GameObject boat;
         private NoteSpawner noteScript;
         private BoatMovement boatScript;
+        private bool noteHit = false;
+        
 
 
     public void Start()
@@ -20,6 +28,7 @@ public class NoteClass : MonoBehaviour
         noteScript = noteSpawner.GetComponent<NoteSpawner>();
         boat = GameObject.Find("Boat");
         boatScript = boat.GetComponent<BoatMovement>();
+        boatScript.GetCurrentNote(gameObject);
         
        
     }
@@ -27,7 +36,7 @@ public class NoteClass : MonoBehaviour
 
     public void Update()
     {
-        float interpolate = (noteScript.beatsShownInAdvance - (beatPlay - Conductor.songPositionInBeats)) / noteScript.beatsShownInAdvance;
+        interpolate = (noteScript.beatsShownInAdvance - (beatPlay - Conductor.songPositionInBeats)) / noteScript.beatsShownInAdvance;
         //UnityEngine.Debug.Log(noteScript.beatsShownInAdvance + "_" + beatPlay + "_" + Conductor.songPositionInBeats + "_" + noteScript.beatsShownInAdvance + "_" + interpolate);
         transform.position = Vector2.Lerp(
             startPos,
@@ -40,28 +49,33 @@ public class NoteClass : MonoBehaviour
             
 
 
-            if (Conductor.songPositionInBeats > beatPlay - 0.5f - 2 && Conductor.songPositionInBeats < beatPlay + 0.5f - 2)
+            if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
             {
-                UnityEngine.Debug.Log("test");
-                Destroy(gameObject);
+                noteHit = true;
+                boatScript.BoatStabilize();
+                
             }
         }
+        if (!noteHit)
+        {
+            if (Conductor.songPositionInBeats > beatPlay - 0.5f - 2 && Conductor.songPositionInBeats < beatPlay + 0.5f - 2)
+            {
+                boatScript.RotateSignafier(true);
+            }
+            else
+            {
+                boatScript.RotateSignafier(false);
+            }
+        }
+        
 
-        if (Conductor.songPositionInBeats > beatPlay - 0.5f - 2 && Conductor.songPositionInBeats < beatPlay + 0.5f - 2)
+        if(transform.position.x < endZone)
         {
-            boatScript.RotateSignafier(true);
-        } else
-        {
-            boatScript.RotateSignafier(false);
+            Destroy(gameObject);
         }
 
 
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-       
-
-        
-    }
+    
 }
