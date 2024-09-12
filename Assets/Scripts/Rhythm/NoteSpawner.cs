@@ -10,6 +10,7 @@ public class NoteSpawner : MonoBehaviour
     public Vector2[] beatEnd;
     public string[] keyName;
     public Color[] noteColor;
+    public bool[] noteLightning;
     int nextIndex = 0;
     public GameObject notePrefab;
    
@@ -33,11 +34,9 @@ public class NoteSpawner : MonoBehaviour
             notePrefab.GetComponent<NoteClass>().endPos = beatEnd[nextIndex];
             notePrefab.GetComponent<NoteClass>().keyName = keyName[nextIndex];
             notePrefab.GetComponent<NoteClass>().noteColor = noteColor[nextIndex];
+            notePrefab.GetComponent<NoteClass>().lightningStrike = noteLightning[nextIndex];
 
             Instantiate(notePrefab, beatStart[nextIndex], Quaternion.identity);
-
-            
-
 
             nextIndex++;
         }

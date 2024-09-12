@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+    public GameObject conductor;
+
     [SerializeField] Animator menuAnimator;
 
     // Start is called before the first frame update
@@ -23,6 +25,8 @@ public class UiManager : MonoBehaviour
 
         Debug.Log("start");
         menuAnimator.SetTrigger("Start");
+
+        conductor.SetActive(true);
     }
 
     public void QuitGame() {
