@@ -36,7 +36,8 @@ public class BoatMovement : MonoBehaviour
 
     public void BoatStabilize()
     {
-        transform.Rotate(0, 0, -5);
+        //transform.Rotate(0, 0, -5);
+        transform.rotation = Quaternion.identity;
     }
 
     public void GetCurrentNote(GameObject sentNote)

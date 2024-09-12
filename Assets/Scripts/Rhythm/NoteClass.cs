@@ -8,6 +8,8 @@ public class NoteClass : MonoBehaviour
     public float beatPlay;
         public Vector2 startPos;
         public Vector2 endPos;
+         public string keyName;
+    public Color noteColor;
         
         public float safety = 0.5f;
         public float beatDelay = 2;
@@ -16,8 +18,11 @@ public class NoteClass : MonoBehaviour
         public float interpolate;
         public GameObject noteSpawner;
         public GameObject boat;
+        public GameObject scrollBar;
         private NoteSpawner noteScript;
         private BoatMovement boatScript;
+        private ScrollBar barScript;
+
         private bool noteHit = false;
         
 
@@ -26,9 +31,16 @@ public class NoteClass : MonoBehaviour
     {
         noteSpawner = GameObject.Find("Note Spawner");
         noteScript = noteSpawner.GetComponent<NoteSpawner>();
+
         boat = GameObject.Find("Boat");
         boatScript = boat.GetComponent<BoatMovement>();
         boatScript.GetCurrentNote(gameObject);
+
+        scrollBar = GameObject.Find("Value");
+        barScript = scrollBar.GetComponent<ScrollBar>();
+        barScript.GetCurrentNote(gameObject);
+
+        GetComponent<SpriteRenderer>().material.color = noteColor;
         
        
     }
@@ -44,7 +56,7 @@ public class NoteClass : MonoBehaviour
             interpolate
             );
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(keyName))
         {
             
 
@@ -53,9 +65,19 @@ public class NoteClass : MonoBehaviour
             {
                 noteHit = true;
                 boatScript.BoatStabilize();
-                
+                GetComponent<SpriteRenderer>().material.color = Color.white;
+                barScript.HitSignafier(true);
+
+            } else
+            {
+                barScript.HitSignafier(false);
             }
+        } else if (Input.anyKeyDown) 
+        {
+            barScript.HitSignafier(false);
         }
+
+
         if (!noteHit)
         {
             if (Conductor.songPositionInBeats > beatPlay - 0.5f - 2 && Conductor.songPositionInBeats < beatPlay + 0.5f - 2)

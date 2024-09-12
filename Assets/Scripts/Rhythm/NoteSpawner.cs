@@ -8,6 +8,8 @@ public class NoteSpawner : MonoBehaviour
     public float[] beatPlay;
     public Vector2[] beatStart;
     public Vector2[] beatEnd;
+    public string[] keyName;
+    public Color[] noteColor;
     int nextIndex = 0;
     public GameObject notePrefab;
    
@@ -29,6 +31,8 @@ public class NoteSpawner : MonoBehaviour
             notePrefab.GetComponent<NoteClass>().startPos = beatStart[nextIndex];
            // Debug.Log(notePrefab.GetComponent<NoteClass>().startPos);
             notePrefab.GetComponent<NoteClass>().endPos = beatEnd[nextIndex];
+            notePrefab.GetComponent<NoteClass>().keyName = keyName[nextIndex];
+            notePrefab.GetComponent<NoteClass>().noteColor = noteColor[nextIndex];
 
             Instantiate(notePrefab, beatStart[nextIndex], Quaternion.identity);
 
