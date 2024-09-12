@@ -17,7 +17,7 @@ public class InstantiateVisuals : MonoBehaviour
             _instanceVisual.transform.position = this.transform.position;
             _instanceVisual.transform.parent = this.transform;
             _instanceVisual.name = "Visual" + i;
-            _instanceVisual.transform.position = Vector2.right * (1f * i);
+            _instanceVisual.transform.position = Vector2.left * (1f * i);
             _visuals[i] = _instanceVisual;
         }
     }
