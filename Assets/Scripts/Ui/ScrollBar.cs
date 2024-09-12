@@ -18,45 +18,77 @@ public class ScrollBar : MonoBehaviour
     private NoteClass currentNoteClass;
     private Color startColor;
     private float Interpolate = 0;
+    private bool goingLeft;
+    private bool leftCheck = false;
+    private bool noteCheck = false;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
         startColor = GetComponent<Image>().color;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(goingLeft);
+
+
+
+
         ColorFade();
 
         //Debug.Log(currentNoteClass.interpolate);
         if (currentNote != null)
         {
-            if (currentNoteClass.keyName == "left")
+            if (!leftCheck)
+            {
+                if (currentNoteClass.keyName == "left")
+                {
+                    goingLeft = true;
+                    leftCheck = true;
+                }
+                else if (currentNoteClass.keyName == "right")
+                {
+                    goingLeft = false;
+                    leftCheck = true;
+                }
+            }
+
+            if (goingLeft)
             {
                 transform.position = Vector2.Lerp(startPosition, new Vector2(startPosition.x - barSize, transform.position.y), currentNoteClass.interpolate);
-            } else if (currentNoteClass.keyName == "right")
+            } else if (!goingLeft)
             {
                 transform.position = Vector2.Lerp(startPosition, new Vector2(startPosition.x + barSize, transform.position.y), currentNoteClass.interpolate);
             }
             else
         {
+                Destroy(gameObject);
             transform.position = startPosition;
             GetComponent<Image>().color = startColor;
             
 
         }
-        } 
+        }
 
         
     }
 
     public void GetCurrentNote(GameObject sentNote)
     {
-        currentNote = sentNote;
-        currentNoteClass = currentNote.GetComponent<NoteClass>();
+       
+        if (!noteCheck)
+        {
+            currentNote = sentNote;
+            currentNoteClass = currentNote.GetComponent<NoteClass>();
+
+            noteCheck = true;
+        }
+        Debug.Log(noteCheck);
+
     }
 
     public void HitSignafier(bool hit)

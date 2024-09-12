@@ -5,25 +5,21 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PostVisual : MonoBehaviour
 {
-    public int _band;
-    public PostProcessVolume _PPV;
 
+    public float postFadeTime;
+    public PostProcessVolume postProcessVolume;
     void Start()
     {
-        
+        postProcessVolume.weight = 0;
     }
 
     void Update()
     {
-        if (AudioVisualizer._audioBandBuffer[_band] > 0.5f)
-        {
-          _PPV.enabled = true;
-          
-        }
-        else
-        {
-            _PPV.enabled = false;
+        postProcessVolume.weight -= postFadeTime * Time.deltaTime;
+    }
 
-        }
+    public void Flash()
+    {
+        postProcessVolume.weight = 1;
     }
 }
