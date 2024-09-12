@@ -6825,7 +6825,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5700351178999414127, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_Size.x
-      value: 3.7
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: -5700351178999414127, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_Offset.x
@@ -6853,7 +6853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310079396711550278, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.95
+      value: 55.74
       objectReference: {fileID: 0}
     - target: {fileID: 6310079396711550278, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7684,7 +7684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5700351178999414127, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_Size.x
-      value: 3.7
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: -5700351178999414127, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_Offset.x
@@ -7728,7 +7728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310079396711550278, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.84
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6310079396711550278, guid: ede289153cda1704fbc69080d871aa67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8944,14 +8944,14 @@ RectTransform:
   m_GameObject: {fileID: 939822004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1567524028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 0}
+  m_AnchoredPosition: {x: 296.2, y: 0}
   m_SizeDelta: {x: 100, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &939822006
@@ -10458,7 +10458,7 @@ Transform:
   m_GameObject: {fileID: 1284018035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.175, y: -2.31, z: 0}
+  m_LocalPosition: {x: 23, y: -2.31, z: 0}
   m_LocalScale: {x: 1.49, y: 1.49, z: 1.49}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -10880,7 +10880,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382717409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 207f24ef7b4d24448ae47b59a13b5fbb, type: 3}
   m_Name: 
@@ -11561,7 +11561,7 @@ Transform:
   m_GameObject: {fileID: 1487415619}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.24, y: -2.31, z: 0}
+  m_LocalPosition: {x: 55.14, y: -2.31, z: 0}
   m_LocalScale: {x: 1.49, y: 1.49, z: 1.49}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -12397,14 +12397,14 @@ RectTransform:
   m_GameObject: {fileID: 1592227983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1567524028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -255, y: 0}
+  m_AnchoredPosition: {x: -305, y: 0}
   m_SizeDelta: {x: 100, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592227985
@@ -13816,15 +13816,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatsShownInAdvance: 4
   beatPlay:
-  - 4
   - 6
-  - 8
   - 10
-  - 12
   - 14
-  - 16
   - 18
+  - 22
+  - 26
+  - 30
+  - 34
+  - 34
+  - 38
+  - 42
+  - 46
+  - 50
+  - 54
+  - 58
+  - 60
+  - 62
+  - 64
+  - 66
+  - 68
+  - 69
+  - 70
+  - 71
   beatStart:
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
+  - {x: 39.3, y: -2.3}
   - {x: 39.3, y: -2.3}
   - {x: 39.3, y: -2.3}
   - {x: 39.3, y: -2.3}
@@ -13835,6 +13865,21 @@ MonoBehaviour:
   - {x: 39.3, y: -2.3}
   beatEnd:
   - {x: 9.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
+  - {x: 69.3, y: -2.3}
+  - {x: 9.3, y: -2.3}
   - {x: 69.3, y: -2.3}
   - {x: 9.3, y: -2.3}
   - {x: 69.3, y: -2.3}
@@ -13843,6 +13888,21 @@ MonoBehaviour:
   - {x: 9.3, y: -2.3}
   - {x: 69.3, y: -2.3}
   keyName:
+  - left
+  - left
+  - left
+  - left
+  - right
+  - right
+  - right
+  - right
+  - left
+  - left
+  - right
+  - left
+  - right
+  - left
+  - right
   - left
   - right
   - left
@@ -13853,6 +13913,11 @@ MonoBehaviour:
   - right
   noteColor:
   - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
   - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
   - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
   - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
@@ -13860,7 +13925,17 @@ MonoBehaviour:
   - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
   - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
   - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
-  noteLightning: 0000000000000000
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
+  - {r: 0.9294118, g: 0.454902, b: 0.26666668, a: 1}
+  - {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
+  noteLightning: 0000000000000100000000000001000000000000000001
   notePrefab: {fileID: 758082047561112621, guid: ede289153cda1704fbc69080d871aa67, type: 3}
 --- !u!4 &1941355694
 Transform:

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16395344f2bd8f945a452008c51746b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatPlay: 0
+  beatPlay: 28
   startPos: {x: 39.3, y: -2.3}
   endPos: {x: 69.3, y: -2.3}
   keyName: right
@@ -108,7 +108,7 @@ MonoBehaviour:
   barPrefab: {fileID: 5988221928264041338, guid: ade83239457303d42ba6645c536cec78, type: 3}
   hitColor: {r: 0, g: 1, b: 0.5709338, a: 1}
   missColor: {r: 1, g: 0, b: 0, a: 1}
-  safety: 1
+  safety: 0.5
   beatDelay: 2
   endZone: -15
   interpolate: 0
