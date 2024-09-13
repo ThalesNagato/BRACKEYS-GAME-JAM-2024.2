@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
 {
-    public float beatsShownInAdvance;
-    public float[] beatPlay;
-    public Vector2[] beatStart;
-    public Vector2[] beatEnd;
-    public string[] keyName;
-    public Color[] noteColor;
-    public bool[] noteLightning;
-    int nextIndex = 0;
-    public GameObject notePrefab;
-   
     
+    public float[] beatPlay;
+    public string[] keyName;
+    public bool[] noteLightning;
+    public Vector2 beatStart;
+    public Vector2 leftBeatEnd;
+    public Vector2 rightBeatEnd;
+    public Color leftColor;
+    public Color rightColor;
+    public float beatsShownInAdvance;
+    public GameObject notePrefab;
 
+    private int nextIndex = 0;
 
     void Start()
     {
@@ -29,17 +30,24 @@ public class NoteSpawner : MonoBehaviour
         if (nextIndex < beatPlay.Length && beatPlay[nextIndex] < Conductor.songPositionInBeats + beatsShownInAdvance)
         {
             notePrefab.GetComponent<NoteClass>().beatPlay = beatPlay[nextIndex];
-            notePrefab.GetComponent<NoteClass>().startPos = beatStart[nextIndex];
-           // Debug.Log(notePrefab.GetComponent<NoteClass>().startPos);
-            notePrefab.GetComponent<NoteClass>().endPos = beatEnd[nextIndex];
             notePrefab.GetComponent<NoteClass>().keyName = keyName[nextIndex];
-            notePrefab.GetComponent<NoteClass>().noteColor = noteColor[nextIndex];
+            notePrefab.GetComponent<NoteClass>().startPos = beatStart;
             notePrefab.GetComponent<NoteClass>().lightningStrike = noteLightning[nextIndex];
+            
+            if (keyName[nextIndex] == "left")
+            {
+                notePrefab.GetComponent<NoteClass>().endPos = leftBeatEnd;
+                notePrefab.GetComponent<NoteClass>().noteColor = leftColor;
+            }
 
-            Instantiate(notePrefab, beatStart[nextIndex], Quaternion.identity);
+            if (keyName[nextIndex] == "right")
+            {
+                notePrefab.GetComponent<NoteClass>().endPos = rightBeatEnd;
+                notePrefab.GetComponent<NoteClass>().noteColor = rightColor;
+            }
 
+            Instantiate(notePrefab, beatStart, Quaternion.identity);
             nextIndex++;
         }
-        //Debug.Log(Conductor.songPositionInBeats);
     }
 }
