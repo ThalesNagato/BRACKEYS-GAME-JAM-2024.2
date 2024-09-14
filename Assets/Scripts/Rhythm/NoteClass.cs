@@ -33,7 +33,6 @@ public class NoteClass : MonoBehaviour
     private GameObject post;
     private GameObject scrollBar;
     private NoteSpawner noteScript;
-    private BoatMovement boatScript;
     private Lightning lightningScript;
     private PostVisual postScript;
     private UnityEngine.UI.Image barColor;
