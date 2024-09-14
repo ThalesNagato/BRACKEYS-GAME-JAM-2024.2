@@ -15,6 +15,7 @@ public class NoteClass : MonoBehaviour
     public string keyName;
     public Color noteColor;
     public bool lightningStrike;
+    public bool woodKnock;
     public GameObject barPrefab;
     public Color hitColor;
     public Color missColor;
@@ -61,9 +62,30 @@ public class NoteClass : MonoBehaviour
         {
             transform.Rotate(0, 0, 180);
         }
+
+        if (keyName == "a")
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     public void Update()
+    {
+        MoveNote();
+        
+        InputCheck();
+
+        LightningCheck();
+
+        DestroyOnBeatEnd();
+
+        
+
+        
+        
+    }
+
+    public void MoveNote()
     {
         interpolate = (noteScript.beatsShownInAdvance - (beatPlay - Conductor.songPositionInBeats)) / noteScript.beatsShownInAdvance;
         transform.position = Vector2.Lerp(
@@ -71,19 +93,11 @@ public class NoteClass : MonoBehaviour
             endPos,
             interpolate
             );
-        if (interpolate >= 0.9)
-        {
-            Destroy(gameObject);
-        }
-        if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
-        {
-            if (lightningStrike)
-            {
-                lightningScript.LightningStrike();
-                postScript.Flash();
-            }
-        }
-        if(keyName == "left" || keyName == "right")
+    }
+
+    public void InputCheck()
+    {
+        if (keyName == "left" || keyName == "right")
         {
             if (!keyPressed)
             {
@@ -101,6 +115,7 @@ public class NoteClass : MonoBehaviour
 
                     if (hit2D.collider.tag == "BeatMarker")
                     {
+                        
                         if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
                         {
                             keyPressed = true;
@@ -119,7 +134,37 @@ public class NoteClass : MonoBehaviour
                 }
             }
         }
-        
+    }
+
+    public void LightningCheck()
+    {
+        if (Conductor.songPositionInBeats > beatPlay - safety/4 - beatDelay && Conductor.songPositionInBeats < beatPlay + safety/4 - beatDelay)
+        {
+            if (lightningStrike)
+            {
+                lightningScript.LightningStrike();
+                postScript.Flash();
+            }
+        }
+    }
+
+    public void KnockCheck()
+    {
+        if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+        {
+            if (woodKnock)
+            {
+
+            }
+        }
+    }
+
+    public void DestroyOnBeatEnd()
+    {
+        if (interpolate >= 0.9)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

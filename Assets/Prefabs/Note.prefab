@@ -105,6 +105,7 @@ MonoBehaviour:
   keyName: right
   noteColor: {r: 0.09019608, g: 0.654902, b: 0.9960785, a: 1}
   lightningStrike: 0
+  woodKnock: 0
   barPrefab: {fileID: 5988221928264041338, guid: ade83239457303d42ba6645c536cec78, type: 3}
   hitColor: {r: 0, g: 1, b: 0.5709338, a: 1}
   missColor: {r: 1, g: 0, b: 0, a: 1}
@@ -177,7 +178,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.59, y: 0}
+  m_Offset: {x: 2.67, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,5 +189,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.72, y: 10.31}
+  m_Size: {x: 2.66, y: 10.31}
   m_EdgeRadius: 0

@@ -8,6 +8,7 @@ public class NoteSpawner : MonoBehaviour
     public float[] beatPlay;
     public string[] keyName;
     public bool[] noteLightning;
+    public bool[] noteKnock;
     public Vector2 beatStart;
     public Vector2 leftBeatEnd;
     public Vector2 rightBeatEnd;
