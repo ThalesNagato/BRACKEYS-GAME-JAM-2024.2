@@ -16,6 +16,7 @@ public class NoteClass : MonoBehaviour
     public Color noteColor;
     public bool lightningStrike;
     public bool woodKnock;
+    public bool drumStick;
     public GameObject barPrefab;
     public Color hitColor;
     public Color missColor;
@@ -155,6 +156,17 @@ public class NoteClass : MonoBehaviour
         if (Conductor.songPositionInBeats > beatPlay - safety / 4 - beatDelay && Conductor.songPositionInBeats < beatPlay + safety / 4 - beatDelay)
         {
             if (woodKnock)
+            {
+
+            }
+        }
+    }
+
+    public void DrumCheck()
+    {
+        if (Conductor.songPositionInBeats > beatPlay - safety / 4 - beatDelay && Conductor.songPositionInBeats < beatPlay + safety / 4 - beatDelay)
+        {
+            if (drumStick)
             {
 
             }
