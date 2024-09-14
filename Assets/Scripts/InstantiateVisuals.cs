@@ -7,6 +7,7 @@ public class InstantiateVisuals : MonoBehaviour
 {
     public GameObject _visualPrefab;
     public float _maxScale;
+
     GameObject[] _visuals = new GameObject[512];
 
     void Start()
@@ -28,7 +29,7 @@ public class InstantiateVisuals : MonoBehaviour
         {
             if (_visuals != null)
             {
-                _visuals[i].transform.localScale = new Vector2(1, (AudioVisualizer._samples[i] * _maxScale)+0.1f);
+                _visuals[i].transform.localScale = new Vector2(1, (AudioVisualizer._samples[i] * _maxScale) + 0.1f);
                 _visuals[i].GetComponentInChildren<SpriteRenderer>().color = Random.ColorHSV(0.60f, 0.80f, 1f, 1f, 0.5f, 1f);
             }
         }

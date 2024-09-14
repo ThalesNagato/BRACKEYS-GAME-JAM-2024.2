@@ -9,20 +9,18 @@ public class BoatMovement : MonoBehaviour
     private int CurrentNote;
     private GameObject currentNote;
     private NoteClass currentNoteClass;
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (currentNote != null)
         {
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x, currentNote.transform.position.y + boatOffset), currentNoteClass.interpolate / 4);
         }
-        
+
     }
 
     public void RotateSignafier(bool rotate)
@@ -31,12 +29,10 @@ public class BoatMovement : MonoBehaviour
         {
             transform.Rotate(0, 0, 10f * Time.deltaTime);
         }
-    
     }
 
     public void BoatStabilize()
     {
-        //transform.Rotate(0, 0, -5);
         transform.rotation = Quaternion.identity;
     }
 
@@ -45,5 +41,5 @@ public class BoatMovement : MonoBehaviour
         currentNote = sentNote;
         currentNoteClass = currentNote.GetComponent<NoteClass>();
     }
-    
+
 }

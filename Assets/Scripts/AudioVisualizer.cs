@@ -7,16 +7,16 @@ public class AudioVisualizer : MonoBehaviour
 {
     AudioSource _audioSource;
     public static float[] _samples = new float[512];
-    float[] _freqBand = new float[8];
-    float[] _bandBuffer = new float[8];
-    float[] _bufferDecrease = new float[8];
-
+    public static float[] _audioBand = new float[8];
+    public static float[] _audioBandBuffer = new float[8];
     public float _bufferLouder = 0.005f;
     public float _bufferQuieter = 1.2f;
 
+    float[] _freqBand = new float[8];
+    float[] _bandBuffer = new float[8];
+    float[] _bufferDecrease = new float[8];
     float[] _freqBandHighest = new float[8];
-    public static float[] _audioBand = new float[8];
-    public static float[] _audioBandBuffer = new float[8];
+
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -24,8 +24,8 @@ public class AudioVisualizer : MonoBehaviour
 
     void Update()
     {
-        GetSpectrumAudioSource ();
-        MakeFrequencyBands ();
+        GetSpectrumAudioSource();
+        MakeFrequencyBands();
         BandBuffer();
         CreateAudioBands();
     }
@@ -38,12 +38,11 @@ public class AudioVisualizer : MonoBehaviour
         {
             if (_freqBand[i] > _freqBandHighest[i])
             {
-                _freqBandHighest [i] = _freqBand[i];
+                _freqBandHighest[i] = _freqBand[i];
             }
-            _audioBand [i] = (_freqBand[i] / _freqBandHighest[i]);
+            _audioBand[i] = (_freqBand[i] / _freqBandHighest[i]);
             _audioBandBuffer[i] = (_bandBuffer[i] / _freqBandHighest[i]);
         }
-
     }
 
     void GetSpectrumAudioSource()
@@ -69,7 +68,7 @@ public class AudioVisualizer : MonoBehaviour
         }
     }
 
-        void BandBuffer()
+    void BandBuffer()
     {
         for (int g = 0; g < 8; g++)
         {
@@ -85,17 +84,16 @@ public class AudioVisualizer : MonoBehaviour
                 _bufferDecrease[g] *= _bufferQuieter;
             }
         }
-
     }
 
     void MakeFrequencyBands()
     {
         int count = 0;
 
-        for (int i = 0; i < 8;  i++)
+        for (int i = 0; i < 8; i++)
         {
             float average = 0;
-            int sampleCount = (int)Mathf.Pow(2, i) * 2; 
+            int sampleCount = (int)Mathf.Pow(2, i) * 2;
 
             if (i == 7)
             {
@@ -103,7 +101,7 @@ public class AudioVisualizer : MonoBehaviour
             }
             for (int j = 0; j < sampleCount; j++)
             {
-                average += _samples [count] * (count + 1);
+                average += _samples[count] * (count + 1);
                 count++;
             }
             average /= count;

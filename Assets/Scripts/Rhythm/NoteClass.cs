@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class NoteClass : MonoBehaviour
 {
@@ -38,9 +39,6 @@ public class NoteClass : MonoBehaviour
     private bool keyPressed;
     private RaycastHit2D hit2D;
 
-    //private bool noteHit = false;
-
-
 
     public void Start()
     {
@@ -51,14 +49,6 @@ public class NoteClass : MonoBehaviour
         boatScript = boat.GetComponent<BoatMovement>();
         boatScript.GetCurrentNote(gameObject);
 
-        //scrollBar = GameObject.Find("ScrollBar");
-        //Instantiate(barPrefab, scrollBar.transform);
-
-        //barMarker= GameObject.Find("BarMarker(Clone)");
-        //barScript = barMarker.GetComponent <ScrollBar>();
-        //barScript.GetCurrentNote(gameObject);
-
-
         lightning = GameObject.Find("Lightning");
         lightningScript = lightning.GetComponent<Lightning>();
 
@@ -67,92 +57,69 @@ public class NoteClass : MonoBehaviour
 
         GetComponent<SpriteRenderer>().material.color = noteColor;
 
-        if(keyName == "right")
+        if (keyName == "right")
         {
             transform.Rotate(0, 0, 180);
         }
-
-
     }
-
 
     public void Update()
     {
-
         interpolate = (noteScript.beatsShownInAdvance - (beatPlay - Conductor.songPositionInBeats)) / noteScript.beatsShownInAdvance;
-
         transform.position = Vector2.Lerp(
             startPos,
             endPos,
             interpolate
             );
-
         if (interpolate >= 0.9)
         {
             Destroy(gameObject);
         }
-
-
-
         if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
         {
-
             if (lightningStrike)
             {
                 lightningScript.LightningStrike();
                 postScript.Flash();
             }
         }
-
-        if (!keyPressed)
+        if(keyName == "left" || keyName == "right")
         {
-            if (Input.GetKeyDown(keyName))
+            if (!keyPressed)
             {
-
-                if (keyName == "left")
+                if (Input.GetKeyDown(keyName))
                 {
-                    hit2D = Physics2D.Raycast(transform.position, Vector2.left);
-
-                }
-                if (keyName == "right")
-                {
-                    hit2D = Physics2D.Raycast(transform.position, Vector2.right);
-                }
-
-                UnityEngine.Debug.Log(hit2D.collider.tag);
-
-                if (hit2D.collider.tag == "BeatMarker")
-                {
-                    //UnityEngine.Debug.Log(hit2D.collider.tag);
-                    if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+                    if (keyName == "left")
                     {
-                        keyPressed = true;
-                        GetComponent<SpriteRenderer>().material.color = hitColor;
+                        hit2D = Physics2D.Raycast(transform.position, Vector2.left);
                     }
-                    else
+
+                    if (keyName == "right")
                     {
-                        keyPressed = true;
-                        GetComponent<SpriteRenderer>().material.color = missColor;
+                        hit2D = Physics2D.Raycast(transform.position, Vector2.right);
+                    }
+
+                    if (hit2D.collider.tag == "BeatMarker")
+                    {
+                        if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+                        {
+                            keyPressed = true;
+                            GetComponent<SpriteRenderer>().material.color = hitColor;
+                        }
+                        else
+                        {
+                            keyPressed = true;
+                            GetComponent<SpriteRenderer>().material.color = missColor;
+                        }
                     }
                 }
-                //else
-                //{
-                //    UnityEngine.Debug.Log(hit2D);
-                //    UnityEngine.Debug.Break();
-                //    keyPressed = true;
-                //    GetComponent<SpriteRenderer>().material.color = missColor;
-                //}
+                if (Conductor.songPositionInBeats > beatPlay + safety - beatDelay)
+                {
+                    GetComponent<SpriteRenderer>().material.color = missColor;
+                }
             }
-            if (Conductor.songPositionInBeats > beatPlay + safety - beatDelay)
-            {
-                GetComponent<SpriteRenderer>().material.color = missColor;
-            }
-            //else if (Input.anyKeyDown)
-            //{
-            //    GetComponent<SpriteRenderer>().material.color = missColor;
-            //    keyPressed = true;
-            //}
         }
+        
     }
 }
 

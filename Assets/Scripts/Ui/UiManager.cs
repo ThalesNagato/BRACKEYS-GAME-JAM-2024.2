@@ -21,7 +21,8 @@ public class UiManager : MonoBehaviour
 
     }
 
-    public void StartGame() {
+    public void StartGame()
+    {
 
         Debug.Log("start");
         menuAnimator.SetTrigger("Start");
@@ -29,13 +30,15 @@ public class UiManager : MonoBehaviour
         conductor.SetActive(true);
     }
 
-    public void QuitGame() {
+    public void QuitGame()
+    {
 
         Application.Quit();
         Debug.Log("quit");
     }
 
-    public void PauseGame() {
+    public void PauseGame()
+    {
 
         Time.timeScale = 0;
     }

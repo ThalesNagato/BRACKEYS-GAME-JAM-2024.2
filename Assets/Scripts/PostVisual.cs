@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
+
 public class PostVisual : MonoBehaviour
 {
-
+    public float postWeight = 1;
     public float postFadeTime;
     public PostProcessVolume postProcessVolume;
+
     void Start()
     {
         postProcessVolume.weight = 0;
@@ -20,6 +22,6 @@ public class PostVisual : MonoBehaviour
 
     public void Flash()
     {
-        postProcessVolume.weight = 1;
+        postProcessVolume.weight = postWeight;
     }
 }
