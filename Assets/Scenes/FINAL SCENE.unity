@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &27218081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 1
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &27218082 stripped
@@ -5551,7 +5551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -5878,7 +5878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &279567082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5892,8 +5892,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 2
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &279567083 stripped
@@ -7000,7 +7000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &637069628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7014,8 +7014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 0
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &637069629 stripped
@@ -7067,7 +7067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ba5f91dcc1e3a4e8e6414f43dc77a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightningFadeTime: 1
+  lightningFadeTime: 5
 --- !u!212 &644391211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7666,7 +7666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -7916,7 +7916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &821604351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7930,8 +7930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 3
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &821604352 stripped
@@ -7967,7 +7967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -8522,7 +8522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   postWeight: 0.5
-  postFadeTime: 1
+  postFadeTime: 5
   postProcessVolume: {fileID: 963194232}
 --- !u!114 &963194232
 MonoBehaviour:
@@ -9245,7 +9245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -9726,7 +9726,7 @@ Transform:
   m_GameObject: {fileID: 1382717409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.39, y: 14.89, z: 0}
+  m_LocalPosition: {x: 39.39, y: 15, z: 0}
   m_LocalScale: {x: 2.56, y: 2.56, z: 2.56}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10010,7 +10010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -10588,7 +10588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &1513627316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10602,8 +10602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 2
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &1513627317 stripped
@@ -10772,7 +10772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -10997,7 +10997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &1599778414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11011,8 +11011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 3
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &1599778415 stripped
@@ -11200,6 +11200,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1567524028}
     m_Modifications:
+    - target: {fileID: 680629266020438674, guid: ade83239457303d42ba6645c536cec78, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4308695397815049891, guid: ade83239457303d42ba6645c536cec78, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11283,6 +11287,10 @@ PrefabInstance:
     - target: {fileID: 5988221928264041338, guid: ade83239457303d42ba6645c536cec78, type: 3}
       propertyPath: m_Name
       value: BarMarker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988221928264041338, guid: ade83239457303d42ba6645c536cec78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11600,7 +11608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z
@@ -11917,7 +11925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &1860526931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11931,8 +11939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 1
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &1860526932 stripped
@@ -12365,6 +12373,132 @@ MonoBehaviour:
   - 20
   - 20.5
   - 21
+  - 22
+  - 23
+  - 23.5
+  - 24
+  - 24.5
+  - 26
+  - 27
+  - 27.5
+  - 28
+  - 28.5
+  - 30
+  - 31
+  - 31.5
+  - 32
+  - 32.5
+  - 34
+  - 35
+  - 35.5
+  - 36
+  - 36.5
+  - 38
+  - 39
+  - 40
+  - 40.5
+  - 41
+  - 42
+  - 43
+  - 44
+  - 44.5
+  - 45
+  - 46
+  - 47
+  - 48
+  - 48.5
+  - 49
+  - 50
+  - 51
+  - 52
+  - 52.5
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 86
+  - 86.5
+  - 87
+  - 86.5
+  - 88
+  - 90
+  - 91
+  - 91.5
+  - 92
+  - 92.5
+  - 94
+  - 95
+  - 95.5
+  - 96
+  - 96.5
+  - 98
+  - 99
+  - 99.5
+  - 100
+  - 100.5
+  - 102
+  - 103
+  - 104
+  - 104.5
+  - 105
+  - 106
+  - 107
+  - 108
+  - 108.5
+  - 109
+  - 110
+  - 111
+  - 112
+  - 112.5
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 121
+  - 122
+  - 123
+  - 124
+  - 125
+  - 126
+  - 127
+  - 128
+  - 129
+  - 130
+  - 131
+  - 132
+  - 132
   keyName:
   - left
   - right
@@ -12386,7 +12520,135 @@ MonoBehaviour:
   - a
   - a
   - a
-  noteLightning: 0000010101000001010100000101010000010101
+  - left
+  - a
+  - a
+  - a
+  - a
+  - right
+  - a
+  - a
+  - a
+  - a
+  - left
+  - a
+  - a
+  - a
+  - a
+  - right
+  - a
+  - a
+  - a
+  - a
+  - left
+  - right
+  - a
+  - a
+  - a
+  - left
+  - right
+  - a
+  - a
+  - a
+  - left
+  - right
+  - a
+  - a
+  - a
+  - left
+  - right
+  - a
+  - a
+  - a
+  - left
+  - right
+  - left
+  - a
+  - right
+  - left
+  - right
+  - a
+  - left
+  - right
+  - left
+  - a
+  - right
+  - left
+  - right
+  - a
+  - left
+  - right
+  - left
+  - a
+  - right
+  - left
+  - right
+  - a
+  - left
+  - right
+  - left
+  - a
+  - right
+  - left
+  - right
+  - space
+  - a
+  - a
+  - a
+  - a
+  - space
+  - a
+  - a
+  - a
+  - a
+  - space
+  - a
+  - a
+  - a
+  - a
+  - space
+  - right
+  - left
+  - right
+  - left
+  - right
+  - left
+  - a
+  - a
+  - a
+  - right
+  - left
+  - a
+  - a
+  - a
+  - right
+  - left
+  - a
+  - a
+  - a
+  - right
+  - left
+  - right
+  - left
+  - space
+  - left
+  - right
+  - left
+  - space
+  - right
+  - left
+  - right
+  - space
+  - left
+  - right
+  - left
+  - right
+  - space
+  - left
+  - right
+  noteLightning: 0000010101000001010100000101010000010101000000000000000000000000000000000000000000000101010000010101000001010100000101010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010101000001010100000101010000000000000000000000000000000000000000
+  noteKnock: 0000000000000000000000000000000000000000000101010100010101010001010101000101010100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010101010001010101000101010100000000000000000000000000000000000000000000000000000000000000000000000000000000
+  drumCheck: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatStart: {x: 39.39, y: -2.3}
   leftBeatEnd: {x: 12.68, y: -2.3}
   rightBeatEnd: {x: 66.1, y: -2.3}
@@ -12539,7 +12801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 110, y: 0}
   endPosition: {x: -10, y: 0}
-  moveSpeed: -20
+  moveSpeed: -10
 --- !u!114 &2009130750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12553,8 +12815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _band: 0
-  _startScale: 2
-  _maxScale: 2.01
+  _startScale: 3
+  _maxScale: 1
   _useBuffer: 1
   colorBuffer: 0.5
 --- !u!4 &2009130751 stripped
@@ -13038,7 +13300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112759305873075303, guid: 6b828a53d89e6144c99a5d26f2e96dc2, type: 3}
       propertyPath: m_LocalScale.z

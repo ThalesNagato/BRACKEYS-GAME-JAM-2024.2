@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
 {
-
     public float[] beatPlay;
     public string[] keyName;
     public bool[] noteLightning;
+    public bool[] noteKnock;
+    public bool[] drumCheck;
     public Vector2 beatStart;
     public Vector2 leftBeatEnd;
     public Vector2 rightBeatEnd;
@@ -26,6 +27,7 @@ public class NoteSpawner : MonoBehaviour
             notePrefab.GetComponent<NoteClass>().beatPlay = beatPlay[nextIndex];
             notePrefab.GetComponent<NoteClass>().keyName = keyName[nextIndex];
             notePrefab.GetComponent<NoteClass>().lightningStrike = noteLightning[nextIndex];
+            notePrefab.GetComponent<NoteClass>().drumStick = drumCheck[nextIndex];
 
             if (keyName[nextIndex] == "left")
             {
@@ -41,7 +43,7 @@ public class NoteSpawner : MonoBehaviour
                 notePrefab.GetComponent<NoteClass>().noteColor = rightColor;
             }
 
-            if (keyName[nextIndex] == "a")
+            if (keyName[nextIndex] == "a" || keyName[nextIndex] == "space")
             {
                 notePrefab.GetComponent<NoteClass>().noteColor = blankColor;
             }
