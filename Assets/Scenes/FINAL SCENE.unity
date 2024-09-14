@@ -10889,6 +10889,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1567524028}
     m_Modifications:
+    - target: {fileID: 680629266020438674, guid: ade83239457303d42ba6645c536cec78, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4308695397815049891, guid: ade83239457303d42ba6645c536cec78, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10972,6 +10976,10 @@ PrefabInstance:
     - target: {fileID: 5988221928264041338, guid: ade83239457303d42ba6645c536cec78, type: 3}
       propertyPath: m_Name
       value: BarMarker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988221928264041338, guid: ade83239457303d42ba6645c536cec78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12043,11 +12051,11 @@ MonoBehaviour:
   - 84
   keyName:
   - left
-  - right
+  - space
   - a
   - a
   - a
-  - left
+  - space
   - right
   - a
   - a

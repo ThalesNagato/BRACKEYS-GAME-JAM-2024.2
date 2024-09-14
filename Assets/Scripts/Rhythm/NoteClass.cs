@@ -24,22 +24,25 @@ public class NoteClass : MonoBehaviour
     public float safety = 0.5f;
     public float beatDelay = 2;
     public float endZone;
-
     public float interpolate;
-    public GameObject noteSpawner;
-    public GameObject boat;
-    public GameObject barMarker;
-    public GameObject lightning;
-    public GameObject post;
-    public GameObject scrollBar;
 
+    private GameObject noteSpawner;
+    private GameObject boat;
+    private GameObject barMarker;
+    private GameObject lightning;
+    private GameObject post;
+    private GameObject scrollBar;
     private NoteSpawner noteScript;
     private BoatMovement boatScript;
-    private ScrollBar barScript;
     private Lightning lightningScript;
     private PostVisual postScript;
+    private UnityEngine.UI.Image barColor;
+    private Color BarStartColor;
     private bool keyPressed;
     private RaycastHit2D hit2D;
+    private bool isRed = false;
+    private bool isYellow = false;
+
 
 
     public void Start()
@@ -57,6 +60,10 @@ public class NoteClass : MonoBehaviour
         post = GameObject.Find("Main Camera");
         postScript = post.GetComponent<PostVisual>();
 
+        scrollBar = GameObject.Find("BarBG");
+        barColor = scrollBar.GetComponent<UnityEngine.UI.Image>();
+        BarStartColor = barColor.color;
+
         GetComponent<SpriteRenderer>().material.color = noteColor;
 
         if (keyName == "right")
@@ -64,28 +71,49 @@ public class NoteClass : MonoBehaviour
             transform.Rotate(0, 0, 180);
         }
 
-        if (keyName == "a")
+        if (keyName == "a" || keyName == "space")
         {
             GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        if (keyName == "space")
+        {
+
         }
     }
 
     public void Update()
     {
-        MoveNote();
-        
-        InputCheck();
+        if (keyName == "left" || keyName == "right")
+        {
+            MoveNote();
+            InputCheck();
+        }
 
-        LightningCheck();
+        if (keyName == "space")
+        {
+            SpaceCheck();
+        }
 
-        KnockCheck();
+        if (lightningStrike)
+        {
+            LightningCheck();
+        }
+
+        if (woodKnock)
+        {
+            KnockCheck();
+        }
+
+
+
 
         DestroyOnBeatEnd();
 
-        
 
-        
-        
+
+
+
     }
 
     public void MoveNote()
@@ -100,42 +128,81 @@ public class NoteClass : MonoBehaviour
 
     public void InputCheck()
     {
-        if (keyName == "left" || keyName == "right")
+
+        if (!keyPressed)
         {
-            if (!keyPressed)
+            if (Input.GetKeyDown(keyName))
             {
-                if (Input.GetKeyDown(keyName))
+                if (keyName == "left")
                 {
-                    if (keyName == "left")
-                    {
-                        hit2D = Physics2D.Raycast(transform.position, Vector2.left);
-                    }
-
-                    if (keyName == "right")
-                    {
-                        hit2D = Physics2D.Raycast(transform.position, Vector2.right);
-                    }
-
-                    if (hit2D.collider.tag == "BeatMarker")
-                    {
-                        
-                        if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
-                        {
-                            keyPressed = true;
-                            GetComponent<SpriteRenderer>().material.color = hitColor;
-                        }
-                        else
-                        {
-                            keyPressed = true;
-                            GetComponent<SpriteRenderer>().material.color = missColor;
-                        }
-                    }
+                    hit2D = Physics2D.Raycast(transform.position, Vector2.left);
                 }
-                if (Conductor.songPositionInBeats > beatPlay + safety - beatDelay)
+
+                if (keyName == "right")
                 {
-                    GetComponent<SpriteRenderer>().material.color = missColor;
+                    hit2D = Physics2D.Raycast(transform.position, Vector2.right);
+                }
+
+                if (hit2D.collider.tag == "BeatMarker")
+                {
+
+                    if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+                    {
+                        keyPressed = true;
+                        GetComponent<SpriteRenderer>().material.color = hitColor;
+                    }
+                    else
+                    {
+                        keyPressed = true;
+                        GetComponent<SpriteRenderer>().material.color = missColor;
+                    }
                 }
             }
+            if (Conductor.songPositionInBeats > beatPlay + safety - beatDelay)
+            {
+                GetComponent<SpriteRenderer>().material.color = missColor;
+            }
+        }
+    }
+
+
+    public void SpaceCheck()
+    {
+        if (!isYellow)
+        {
+            if (Conductor.songPositionInBeats > beatPlay - safety  - beatDelay && Conductor.songPositionInBeats < beatPlay + safety  - beatDelay)
+            {
+                barColor.color = Color.yellow;
+                isYellow = true;
+            }
+        }
+
+        if (!keyPressed)
+        {
+            if (Input.GetKeyDown(keyName))
+            {
+                if (Conductor.songPositionInBeats > beatPlay - safety  - beatDelay && Conductor.songPositionInBeats < beatPlay + safety  - beatDelay)
+                {
+                    keyPressed = true;
+                    barColor.color = hitColor;
+                }
+            }
+        }
+        if (!keyPressed)
+        {
+            if (!isRed)
+            {
+                if (Conductor.songPositionInBeats > beatPlay + safety / 2 - beatDelay)
+                {
+                    isRed = true;
+                    barColor.color = missColor;
+                }
+            }
+        }
+
+        if (isRed || keyPressed)
+        {
+            barColor.color += new Color(0.5f, 0.5f, 0.5f) * Time.deltaTime;
         }
     }
 

@@ -43,7 +43,7 @@ public class NoteSpawner : MonoBehaviour
                 notePrefab.GetComponent<NoteClass>().noteColor = rightColor;
             }
 
-            if (keyName[nextIndex] == "a")
+            if (keyName[nextIndex] == "a" || keyName[nextIndex] == "space")
             {
                 notePrefab.GetComponent<NoteClass>().noteColor = blankColor;
             }
