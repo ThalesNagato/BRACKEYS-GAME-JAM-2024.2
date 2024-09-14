@@ -51,8 +51,6 @@ public class NoteClass : MonoBehaviour
         noteScript = noteSpawner.GetComponent<NoteSpawner>();
 
         boat = GameObject.Find("Boat");
-        boatScript = boat.GetComponent<BoatMovement>();
-        boatScript.GetCurrentNote(gameObject);
 
         lightning = GameObject.Find("Lightning");
         lightningScript = lightning.GetComponent<Lightning>();
@@ -142,25 +140,35 @@ public class NoteClass : MonoBehaviour
                 {
                     hit2D = Physics2D.Raycast(transform.position, Vector2.right);
                 }
-
-                if (hit2D.collider.tag == "BeatMarker")
+                if (hit2D.collider != null)
                 {
-
-                    if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+                    if (hit2D.collider.tag == "BeatMarker")
                     {
-                        keyPressed = true;
-                        GetComponent<SpriteRenderer>().material.color = hitColor;
+                        if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+                        {
+                            keyPressed = true;
+                            GetComponent<SpriteRenderer>().material.color = hitColor;
+                        }
+                        else
+                        {
+                            keyPressed = true;
+                            GetComponent<SpriteRenderer>().material.color = missColor;
+                            boat.transform.position += new Vector3(0, -1, 0);
+                        }
                     }
-                    else
-                    {
-                        keyPressed = true;
-                        GetComponent<SpriteRenderer>().material.color = missColor;
-                    }
+                } else if (hit2D.collider == null)
+                {
+                    keyPressed = true;
+                    GetComponent<SpriteRenderer>().material.color = missColor;
+                    boat.transform.position += new Vector3(0, -1, 0);
                 }
+
             }
             if (Conductor.songPositionInBeats > beatPlay + safety - beatDelay)
             {
+                keyPressed = true;
                 GetComponent<SpriteRenderer>().material.color = missColor;
+                boat.transform.position += new Vector3(0, -1, 0);
             }
         }
     }
@@ -170,7 +178,7 @@ public class NoteClass : MonoBehaviour
     {
         if (!isYellow)
         {
-            if (Conductor.songPositionInBeats > beatPlay - safety  - beatDelay && Conductor.songPositionInBeats < beatPlay + safety  - beatDelay)
+            if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
             {
                 barColor.color = Color.yellow;
                 isYellow = true;
@@ -181,7 +189,7 @@ public class NoteClass : MonoBehaviour
         {
             if (Input.GetKeyDown(keyName))
             {
-                if (Conductor.songPositionInBeats > beatPlay - safety  - beatDelay && Conductor.songPositionInBeats < beatPlay + safety  - beatDelay)
+                if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
                 {
                     keyPressed = true;
                     barColor.color = hitColor;
@@ -196,6 +204,7 @@ public class NoteClass : MonoBehaviour
                 {
                     isRed = true;
                     barColor.color = missColor;
+                    boat.transform.position += new Vector3(0, -1, 0);
                 }
             }
         }
