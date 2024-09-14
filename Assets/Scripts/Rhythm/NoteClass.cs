@@ -77,6 +77,8 @@ public class NoteClass : MonoBehaviour
 
         LightningCheck();
 
+        KnockCheck();
+
         DestroyOnBeatEnd();
 
         
@@ -138,7 +140,7 @@ public class NoteClass : MonoBehaviour
 
     public void LightningCheck()
     {
-        if (Conductor.songPositionInBeats > beatPlay - safety/4 - beatDelay && Conductor.songPositionInBeats < beatPlay + safety/4 - beatDelay)
+        if (Conductor.songPositionInBeats > beatPlay - safety / 4 - beatDelay && Conductor.songPositionInBeats < beatPlay + safety / 4 - beatDelay)
         {
             if (lightningStrike)
             {
@@ -150,7 +152,7 @@ public class NoteClass : MonoBehaviour
 
     public void KnockCheck()
     {
-        if (Conductor.songPositionInBeats > beatPlay - safety - beatDelay && Conductor.songPositionInBeats < beatPlay + safety - beatDelay)
+        if (Conductor.songPositionInBeats > beatPlay - safety / 4 - beatDelay && Conductor.songPositionInBeats < beatPlay + safety / 4 - beatDelay)
         {
             if (woodKnock)
             {
