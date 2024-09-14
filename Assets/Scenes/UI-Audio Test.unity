@@ -11774,6 +11774,7 @@ MonoBehaviour:
   rightBeatEnd: {x: 66.1, y: -2.3}
   leftColor: {r: 1, g: 0.6784314, b: 0, a: 1}
   rightColor: {r: 0.49411768, g: 0.7803922, b: 1, a: 1}
+  blankColor: {r: 0, g: 0, b: 0, a: 0}
   beatsShownInAdvance: 6
   notePrefab: {fileID: 758082047561112621, guid: ede289153cda1704fbc69080d871aa67, type: 3}
 --- !u!4 &1941355694
