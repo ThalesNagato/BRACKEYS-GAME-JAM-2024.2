@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
     public GameObject conductor;
+    [SerializeField] int mainMenuSceneIndex;
 
     [SerializeField] Animator menuAnimator;
 
@@ -47,5 +49,10 @@ public class UiManager : MonoBehaviour
     {
 
         Time.timeScale = 1;
+    }
+
+    public void LoadMainMenu() {
+
+        SceneManager.LoadScene(mainMenuSceneIndex);
     }
 }
