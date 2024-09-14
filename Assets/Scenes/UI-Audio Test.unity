@@ -11769,6 +11769,8 @@ MonoBehaviour:
   - left
   - right
   noteLightning: 000000000000010000000000000000000000000000
+  noteKnock: 
+  drumCheck: 
   beatStart: {x: 39.39, y: -2.3}
   leftBeatEnd: {x: 12.68, y: -2.3}
   rightBeatEnd: {x: 66.1, y: -2.3}
