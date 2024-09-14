@@ -82,6 +82,8 @@ public class NoteClass : MonoBehaviour
 
     public void Update()
     {
+        interpolate = (noteScript.beatsShownInAdvance - (beatPlay - Conductor.songPositionInBeats)) / noteScript.beatsShownInAdvance;
+
         if (keyName == "left" || keyName == "right")
         {
             MoveNote();
@@ -116,7 +118,6 @@ public class NoteClass : MonoBehaviour
 
     public void MoveNote()
     {
-        interpolate = (noteScript.beatsShownInAdvance - (beatPlay - Conductor.songPositionInBeats)) / noteScript.beatsShownInAdvance;
         transform.position = Vector2.Lerp(
             startPos,
             endPos,
