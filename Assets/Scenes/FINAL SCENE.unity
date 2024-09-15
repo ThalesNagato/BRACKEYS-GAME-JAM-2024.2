@@ -455,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &46751345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +2006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &285837172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,7 +4066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &639333507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,7 +5555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1001 &827639622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10175,7 +10175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1001 &1540825245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10532,7 +10532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &1611010284
 GameObject:
   m_ObjectHideFlags: 0
@@ -11976,7 +11976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &1905616089
 GameObject:
   m_ObjectHideFlags: 0
@@ -13505,7 +13505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &2046394548
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,13 +26,13 @@ public class boatmovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(noteSpawner.activeSelf == true){
-            bpm = 75f;
-        }
+        //if(noteSpawner.activeSelf == true){
+        //    bpm = 75f;
+        //}
         
-        bps = bpm/60;  
-        speed = bps * Mathf.PI;
-        time += Time.deltaTime;  
-        transform.position= new Vector2(transform.position.x, transform.position.y + (height*5 * Mathf.Cos(time * speed)));
+        //bps = bpm/60;  
+        //speed = bps * Mathf.PI;
+        //time += Time.deltaTime;  
+        //transform.position= new Vector2(transform.position.x, transform.position.y + (height*5 * Mathf.Cos(time * speed)));
     }
 }

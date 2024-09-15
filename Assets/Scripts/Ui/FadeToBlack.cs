@@ -55,7 +55,9 @@ public class FadeToBlack : MonoBehaviour
 
         if (Input.GetKeyDown("r"))
         {
-            isFading = true;
+            Conductor.songPositionInBeats = 0;
+            Conductor.dspSongTime = 0;
+            SceneManager.LoadScene("FINAL SCENE");
         }
     }
 
