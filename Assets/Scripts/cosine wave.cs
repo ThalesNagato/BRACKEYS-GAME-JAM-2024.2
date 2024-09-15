@@ -11,6 +11,7 @@ public class cosinewave : MonoBehaviour
     public float frequency = 3f;
     public Vector2 xLimits = new Vector2(-12.5f,12.5f);
     private float movementSpeed = 1f;
+    public GameObject noteSpawner;
     //[Range(0,2*Mathf.PI)]
     //public float radians;
 
