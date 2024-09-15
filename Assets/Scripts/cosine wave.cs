@@ -28,24 +28,24 @@ public class cosinewave : MonoBehaviour
     void Draw()
     {
 
-        if(noteSpawner.activeSelf == true){
-            bpm = 75f;
-        }
+        //if(noteSpawner.activeSelf == true){
+        //    bpm = 75f;
+        //}
 
-        bps = bpm/60;
-        movementSpeed = bps * Mathf.PI;
-        float xStart = xLimits.x;
-        float Tau = 2* Mathf.PI;
-        float xFinish = xLimits.y;
+        //bps = bpm/60;
+        //movementSpeed = bps * Mathf.PI;
+        //float xStart = xLimits.x;
+        //float Tau = 2* Mathf.PI;
+        //float xFinish = xLimits.y;
  
-        myLineRenderer.positionCount = points;
-        for(int currentPoint = 0; currentPoint<points;currentPoint++)
-        {
-            float progress = (float)currentPoint/(points-1);
-            float x = Mathf.Lerp(xStart,xFinish,progress);
-            float y = amplitude*Mathf.Cos((Tau*frequency*x)+(Time.timeSinceLevelLoad*movementSpeed));
-            myLineRenderer.SetPosition(currentPoint, new Vector3(transform.position.x + x, transform.position.y + y,0));
-        }
+        //myLineRenderer.positionCount = points;
+        //for(int currentPoint = 0; currentPoint<points;currentPoint++)
+        //{
+        //    float progress = (float)currentPoint/(points-1);
+        //    float x = Mathf.Lerp(xStart,xFinish,progress);
+        //    float y = amplitude*Mathf.Cos((Tau*frequency*x)+(Time.timeSinceLevelLoad*movementSpeed));
+        //    myLineRenderer.SetPosition(currentPoint, new Vector3(transform.position.x + x, transform.position.y + y,0));
+        //}
     }
  
     void FixedUpdate()
