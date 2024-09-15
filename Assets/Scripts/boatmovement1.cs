@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class boatmovement : MonoBehaviour
 {
+    public float lives;
+
     public float height = 2f;
 
     private float time;

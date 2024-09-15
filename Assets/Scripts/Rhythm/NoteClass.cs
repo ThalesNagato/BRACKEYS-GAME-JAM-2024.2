@@ -32,9 +32,12 @@ public class NoteClass : MonoBehaviour
     private GameObject lightning;
     private GameObject post;
     private GameObject scrollBar;
+    private GameObject fadeToBlack;
     private NoteSpawner noteScript;
+    private boatmovement boatScript;
     private Lightning lightningScript;
     private PostVisual postScript;
+    private FadeToBlack fade;
     private UnityEngine.UI.Image barColor;
     private Color BarStartColor;
     private bool keyPressed;
@@ -50,6 +53,7 @@ public class NoteClass : MonoBehaviour
         noteScript = noteSpawner.GetComponent<NoteSpawner>();
 
         boat = GameObject.Find("Boat");
+        boatScript = boat.GetComponent<boatmovement>();
 
         lightning = GameObject.Find("Lightning");
         lightningScript = lightning.GetComponent<Lightning>();
@@ -60,6 +64,9 @@ public class NoteClass : MonoBehaviour
         scrollBar = GameObject.Find("BarBG");
         barColor = scrollBar.GetComponent<UnityEngine.UI.Image>();
         BarStartColor = barColor.color;
+
+        fadeToBlack = GameObject.Find("FadeToBlack");
+        fade = fadeToBlack.GetComponent<FadeToBlack>();
 
         GetComponent<SpriteRenderer>().material.color = noteColor;
 
@@ -154,13 +161,14 @@ public class NoteClass : MonoBehaviour
                             keyPressed = true;
                             GetComponent<SpriteRenderer>().material.color = missColor;
                             boat.transform.position += new Vector3(0, -1, 0);
+                            lifeLost();
                         }
                     }
                 } else if (hit2D.collider == null)
                 {
                     keyPressed = true;
                     GetComponent<SpriteRenderer>().material.color = missColor;
-                    boat.transform.position += new Vector3(0, -1, 0);
+                    lifeLost();
                 }
 
             }
@@ -168,7 +176,7 @@ public class NoteClass : MonoBehaviour
             {
                 keyPressed = true;
                 GetComponent<SpriteRenderer>().material.color = missColor;
-                boat.transform.position += new Vector3(0, -1, 0);
+                lifeLost();
             }
         }
     }
@@ -204,7 +212,7 @@ public class NoteClass : MonoBehaviour
                 {
                     isRed = true;
                     barColor.color = missColor;
-                    boat.transform.position += new Vector3(0, -1, 0);
+                    lifeLost();
                 }
             }
         }
@@ -254,6 +262,16 @@ public class NoteClass : MonoBehaviour
         if (interpolate >= 0.9)
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void lifeLost()
+    {
+        boat.transform.position += new Vector3(0, -1, 0);
+        boatScript.lives--;
+        if (boatScript.lives <= 0)
+        {
+            fade.Fade();
         }
     }
 }
