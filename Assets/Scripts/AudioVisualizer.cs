@@ -17,6 +17,13 @@ public class AudioVisualizer : MonoBehaviour
     float[] _bufferDecrease = new float[8];
     float[] _freqBandHighest = new float[8];
 
+    private void Awake()
+    {
+    _samples = new float[512];
+    _audioBand = new float[8];
+    _audioBandBuffer = new float[8];
+}
+
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();

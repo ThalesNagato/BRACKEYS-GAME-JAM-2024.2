@@ -19,12 +19,17 @@ public class cosinewave : MonoBehaviour
 
     void Start()
     {
+        bpm = 0;
         myLineRenderer = GetComponent<LineRenderer>();
         points = 74;
     }
     
     void Draw()
     {
+
+        if(noteSpawner.activeSelf == true){
+            bpm = 75f;
+        }
 
         bps = bpm/60;
         movementSpeed = bps * Mathf.PI;
