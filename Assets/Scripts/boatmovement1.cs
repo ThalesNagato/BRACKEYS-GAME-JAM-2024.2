@@ -20,11 +20,16 @@ public class boatmovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {    
+        bpm = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(noteSpawner.activeSelf == true){
+            bpm = 75f;
+        }
+        
         bps = bpm/60;  
         speed = bps * Mathf.PI;
         time += Time.deltaTime;  
