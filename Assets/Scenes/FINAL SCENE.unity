@@ -456,7 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &46751345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &285837172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +4071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &639333507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,8 +4409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653d41f37c02eef4eba5c3b2f22b8c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeSpeed: 0
-  blackTime: 0
+  fadeSpeed: 0.5
+  blackTime: 1
 --- !u!225 &645313462
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5562,7 +5562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1001 &827639622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10191,7 +10191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1001 &1540825245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10548,7 +10548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &1611010284
 GameObject:
   m_ObjectHideFlags: 0
@@ -11996,7 +11996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &1905616089
 GameObject:
   m_ObjectHideFlags: 0
@@ -13528,7 +13528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyVisuals: {fileID: 27218081}
   enableWaveVisualization: {fileID: 27218083}
-  Timer: 2
+  Timer: 1
 --- !u!1 &2046394548
 GameObject:
   m_ObjectHideFlags: 0
