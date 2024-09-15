@@ -40,14 +40,13 @@ public class FadeToBlack : MonoBehaviour
 
             if (timer >= blackTime)
             {
-                interpolate = 0;
-                isFading = false;
+
                 Conductor.songPositionInBeats = 0;
                 Conductor.dspSongTime = 0;
-                SceneManager.LoadScene("FINAL SCENE");
+                SceneManager.LoadScene("Failure");
 
 
-                GetComponent<Canvas>().sortingOrder = -1;
+              
             }
 
 
