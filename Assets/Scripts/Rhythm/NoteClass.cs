@@ -33,6 +33,7 @@ public class NoteClass : MonoBehaviour
     private GameObject post;
     private GameObject scrollBar;
     private GameObject fadeToBlack;
+    private GameObject fish;
     private NoteSpawner noteScript;
     private boatmovement boatScript;
     private Lightning lightningScript;
@@ -44,6 +45,8 @@ public class NoteClass : MonoBehaviour
     private RaycastHit2D hit2D;
     private bool isRed = false;
     private bool isYellow = false;
+    private Animator boatAnimator;
+    private Animator fishAnimator;
 
 
 
@@ -54,6 +57,7 @@ public class NoteClass : MonoBehaviour
 
         boat = GameObject.Find("Boat");
         boatScript = boat.GetComponent<boatmovement>();
+        boatAnimator = boat.GetComponent<Animator>();
 
         lightning = GameObject.Find("Lightning");
         lightningScript = lightning.GetComponent<Lightning>();
@@ -67,6 +71,9 @@ public class NoteClass : MonoBehaviour
 
         fadeToBlack = GameObject.Find("FadeToBlack");
         fade = fadeToBlack.GetComponent<FadeToBlack>();
+
+        fish = GameObject.Find("Fishs");
+        fishAnimator = fish.GetComponent<Animator>();
 
         GetComponent<SpriteRenderer>().material.color = noteColor;
 
@@ -141,11 +148,13 @@ public class NoteClass : MonoBehaviour
                 if (keyName == "left")
                 {
                     hit2D = Physics2D.Raycast(transform.position, Vector2.left);
+                    boatAnimator.SetBool("LeftButton", true);
                 }
 
                 if (keyName == "right")
                 {
                     hit2D = Physics2D.Raycast(transform.position, Vector2.right);
+                    boatAnimator.SetBool("RightButton", true);
                 }
                 if (hit2D.collider != null)
                 {
@@ -201,6 +210,7 @@ public class NoteClass : MonoBehaviour
                 {
                     keyPressed = true;
                     barColor.color = hitColor;
+                    fishAnimator.SetBool("Bounce", true);
                 }
             }
         }
@@ -267,6 +277,8 @@ public class NoteClass : MonoBehaviour
 
     public void lifeLost()
     {
+        CameraShake.Shake(1, 1);
+
         boat.transform.position += new Vector3(0, -1, 0);
         boatScript.lives--;
         if (boatScript.lives <= 0)

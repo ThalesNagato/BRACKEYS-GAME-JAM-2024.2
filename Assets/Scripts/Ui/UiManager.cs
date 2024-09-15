@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
     public GameObject conductor;
+    public GameObject noteSpawner;
     [SerializeField] int mainMenuSceneIndex;
 
     [SerializeField] Animator menuAnimator;
@@ -30,6 +31,7 @@ public class UiManager : MonoBehaviour
         menuAnimator.SetTrigger("Start");
 
         conductor.SetActive(true);
+        noteSpawner.SetActive(true);
     }
 
     public void QuitGame()

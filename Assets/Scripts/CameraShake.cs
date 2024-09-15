@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class CameraShake : MonoBehaviour
 {
-    public static CameraShake Instance;
+   public static CameraShake Instance;
     // Start is called before the first frame update
 
     private void Awake() => Instance = this;

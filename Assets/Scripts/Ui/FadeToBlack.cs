@@ -53,6 +53,11 @@ public class FadeToBlack : MonoBehaviour
 
             
         }
+
+        if (Input.GetKeyDown("r"))
+        {
+            isFading = true;
+        }
     }
 
     public void Fade()
