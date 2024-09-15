@@ -15,6 +15,7 @@ public class Conductor : MonoBehaviour
     public float loopPositionInBeats;
     public float loopPositionInAnalog;
     public static Conductor instance;
+    public static bool paused = false;
 
 
     private void Awake()
@@ -33,16 +34,24 @@ public class Conductor : MonoBehaviour
 
     void Update()
     {
-        songPosition = (float)(AudioSettings.dspTime - dspSongTime);
-        songPositionInBeats = songPosition / secPerBeat;
-        loopPositionInAnalog = loopPositionInBeats / beatsPerLoop;
-
-        if (songPositionInBeats >= (completedLoops + 1) * beatsPerLoop)
+        if (paused)
         {
-            completedLoops++;
-        }
 
-        loopPositionInBeats = songPositionInBeats - completedLoops * beatsPerLoop;
-        loopPositionInAnalog = loopPositionInBeats / beatsPerLoop;
+            songPosition = (float)(AudioSettings.dspTime - dspSongTime);
+            songPositionInBeats = songPosition / secPerBeat;
+            loopPositionInAnalog = loopPositionInBeats / beatsPerLoop;
+
+            if (songPositionInBeats >= (completedLoops + 1) * beatsPerLoop)
+            {
+                completedLoops++;
+            }
+
+            loopPositionInBeats = songPositionInBeats - completedLoops * beatsPerLoop;
+            loopPositionInAnalog = loopPositionInBeats / beatsPerLoop;
+
+
+
+        }
+        
     }
 }
