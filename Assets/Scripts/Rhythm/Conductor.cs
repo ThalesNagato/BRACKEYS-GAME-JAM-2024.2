@@ -8,7 +8,7 @@ public class Conductor : MonoBehaviour
     public float secPerBeat;
     public float songPosition;
     public static float songPositionInBeats;
-    public float dspSongTime;
+    public static float dspSongTime;
     public AudioSource musicSource;
     public float beatsPerLoop;
     public int completedLoops = 0;
@@ -19,6 +19,7 @@ public class Conductor : MonoBehaviour
 
     private void Awake()
     {
+        songPositionInBeats = 0;
         instance = this;
     }
 

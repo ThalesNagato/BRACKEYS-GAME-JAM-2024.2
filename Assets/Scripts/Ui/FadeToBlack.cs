@@ -11,6 +11,7 @@ public class FadeToBlack : MonoBehaviour
 
     private bool isFading;
     private float interpolate = 0;
+    private bool timerOn = false;
     private float timer = 0;
 
     void Start()
@@ -29,14 +30,23 @@ public class FadeToBlack : MonoBehaviour
 
             if(interpolate >= 1)
             {
-                interpolate = 0;
-                isFading = false;
+                timerOn = true;
+            }
+
+            if (timerOn)
+            {
                 timer += Time.deltaTime;
             }
 
             if (timer >= blackTime)
             {
+                interpolate = 0;
+                isFading = false;
+                Conductor.songPositionInBeats = 0;
+                Conductor.dspSongTime = 0;
                 SceneManager.LoadScene("FINAL SCENE");
+
+
                 GetComponent<Canvas>().sortingOrder = -1;
             }
 
