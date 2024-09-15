@@ -31,20 +31,20 @@ public class boatmovement : MonoBehaviour
     void FixedUpdate()
     {
         if(noteSpawner.activeSelf == true){
-            bpm = 75f;
+            //time = 0;
+            bpm = 75;
             gameStarted = true;
-            time = Time.timeSinceLevelLoad;
         }
-        
          
-        
+
         if (gameStarted) {
             bps = bpm / 60;
             time += Time.deltaTime;
             speed = bps * Mathf.PI;
-            transform.position = new Vector2(transform.position.x, transform.position.y + (height * 5 * Mathf.Cos(time * speed)));
+            transform.position = new Vector2(transform.position.x, transform.position.y + (height * 5f * Mathf.Cos(time * speed)));
         }
-        
-        
+
+       
+
     }
 }

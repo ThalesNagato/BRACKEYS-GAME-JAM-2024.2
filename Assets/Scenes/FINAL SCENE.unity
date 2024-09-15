@@ -278,6 +278,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -1693,6 +1694,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -2042,6 +2044,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -2839,6 +2842,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -3367,6 +3371,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -4727,6 +4732,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -5174,6 +5180,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -5813,6 +5820,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -6178,7 +6186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a634c30cb74ee4f9f1a501b07a6491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postWeight: 0.5
+  postWeight: 0.2
   postFadeTime: 5
   postProcessVolume: {fileID: 963194232}
 --- !u!114 &963194232
@@ -6327,6 +6335,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -6780,6 +6789,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -7291,6 +7301,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -7877,6 +7888,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -8257,6 +8269,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -8496,6 +8509,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -8852,7 +8866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   height: 0.18
-  bpm: 75
+  bpm: 0
   noteSpawner: {fileID: 1941355692}
 --- !u!1 &1398689900
 GameObject:
@@ -9325,6 +9339,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -10582,6 +10597,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -10737,6 +10753,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -10892,6 +10909,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -11528,6 +11546,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -12030,6 +12049,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -12185,6 +12205,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
@@ -12737,6 +12758,7 @@ MonoBehaviour:
   myLineRenderer: {fileID: 0}
   amplitude: 10
   frequency: 0.007
+  time: 0
   xLimits: {x: -75, y: 75}
   noteSpawner: {fileID: 1941355692}
   bpm: 75
