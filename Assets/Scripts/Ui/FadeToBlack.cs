@@ -59,6 +59,13 @@ public class FadeToBlack : MonoBehaviour
             Conductor.dspSongTime = 0;
             SceneManager.LoadScene("FINAL SCENE");
         }
+
+        if (Conductor.songPositionInBeats > 165)
+        {
+            Conductor.songPositionInBeats = 0;
+            Conductor.dspSongTime = 0;
+            SceneManager.LoadScene("FINAL SCENE");
+        }
     }
 
     public void Fade()
